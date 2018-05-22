@@ -5,12 +5,28 @@ body {
 
 #pinContainer {
     width: 100%;
-    height: 100%;
+    height: 100vh !important;
     overflow: hidden;
 }
 
 .panel {
-    height: 100%;
+    height: 110%;
     width: 100%;
     position: absolute;
+    text-align: center;
+        
 }
+
+.blue {
+    background-color: blue;
+}
+
+.turqoise {
+    background-color: red;
+}
+
+.green {
+    height: 200%;
+    background-color: green;
+}
+
