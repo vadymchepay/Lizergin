@@ -1,18 +1,24 @@
+//Normalize
+@import 'normalize';
+
+
+//Materialize Elements
+@import 'elements/color-variables';
+@import 'elements/color-classes';
+@import 'elements/variables';
+@import 'elements/global';
+@import 'elements/navbar';
+@import 'elements/sidenav';
+
+
 //Base styles
 
-@import 'normalize';
 @import 'fonts';
+//@import 'variables';
 @import 'base';
-
-//Elements
-
-//@import 'elements/preloader';
 
 //Sections
 
+@import 'sections/header';
 
-
-//Media
-
-//@import 'media';
 
