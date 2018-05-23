@@ -1,53 +1,54 @@
 $(document).ready(function () {
     $('.sidenav').sidenav();
-});
-
-//
-//$(function () {
-//    // Init ScrollMagic
-//    var controller = new ScrollMagic.Controller();
-//
-//    // pin the intro
-//    var pinIntroScene = new ScrollMagic.Scene({
-//            triggerElement: '.intro_content',
-//            triggerHook: 0,
-//            duration: '100%'
-//        })
-//        .setPin('.intro_content', {
-//            pushFollowers: false
-//        })
-//        .addTo(controller);
-//
-//    // pin again
-//    var pinIntroScene2 = new ScrollMagic.Scene({
-//            triggerElement: '#project01',
-//            triggerHook: 0.4
-//        })
-//        .setPin('#intro', {
-//            pushFollowers: false
-//        })
-//        .addTo(controller);
-//});
-
-$(window).scroll(function () {
-    var introPos = $(this).scrollTop();
-    var coverBottom = $('.intro_cover').position().top + $('.intro_cover').innerHeight();
+    var introHeight = $('.intro').innerHeight();
+    var aboutHeight = $('.about').innerHeight();
     var trigger_1 = false;
-
-    $('.intro_cover').css({
-        'top': -introPos + 'px'
+    var coverBottom;
+    var aboutBottom;
+    var nTop;
+    $('.about').css({
+        'top': introHeight + 'px'
     });
-    if (coverBottom <= 0) {
-        trigger_1 = true;
-    };
-    if (trigger_1) {
-        var aboutPos = $('.about').offset().top;
-        $('.about').css({
-            'position' : 'relative',
-            'top': aboutPos-introPos
+    $('.intro_content').css({
+        'top': 0
+    });
+    $(window).scroll(function () {
+        var sPos = $(this).scrollTop();
+        $('.intro_cover').css({
+            'top': -sPos + 'px'
         });
-    }
-
-    console.log(trigger_1);
-    console.log(aboutPos);
+        coverBottom = $('.intro_cover').innerHeight() - sPos * 1.87;
+        
+        
+        $('.intro_content').css({
+            'top': sPos + 'px'
+        });
+        var top = introHeight + sPos;
+        $('.about').css({
+            'top': top + 'px'
+        });
+        if (coverBottom >= -200 && coverBottom <= 0) {
+            nTop = $('.about').position().top;
+        };
+        if (coverBottom <= 0) {
+            trigger_1 = true;
+            $('.about').css({
+                'top': nTop + 'px'
+               });
+            aboutBottom = aboutHeight - sPos * 1.87 + nTop;
+        }else {
+            trigger_1 = false;
+            $('.about').css({
+                'top': top + 'px'
+            });
+        };
+        
+        console.log('coverBottom =' + coverBottom);
+        console.log('aboutHeight =' + aboutHeight);
+        console.log('aboutBottom =' + aboutBottom);
+        console.log('innerHeight =' + $('.intro_cover').innerHeight());
+        
+        console.log('sPos =' + sPos);
+        console.log('nTop =' + nTop);
+    });
 });
