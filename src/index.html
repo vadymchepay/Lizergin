@@ -33,35 +33,59 @@
         <div class="intro_cover">
             <div class="intro_cover_content">
                 <div class="cover_content_slider_container">
-                    <div class="cover_content_slide">
-                        <div class="slide_text"></div>
-                        <div class="slide_image"><img src="img/world_map.png" alt=""></div>
-                    </div>   
-                    <div class="cover_content_slide">
-                        <div class="slide_text"></div>
-                        <div class="slide_image"><img src="img/Pins.png" alt=""></div>
-                    </div>   
-                    <div class="cover_content_slide">
-                        <div class="slide_text"></div>
-                        <div class="slide_image"><img src="img/Country_20Flags.png" alt=""></div>
-                    </div>   
-                    <div class="cover_content_slide">
-                        <div class="slide_text"></div>
-                        <div class="slide_image"><img src="img/Offices.png" alt=""></div>
+                    <div class="cover_content_slide" id="slide1">
+                        <div class="slide_text">
+                            <h1>WE DOCUMENT THE WORLD</h1>
+                            <button class="exp_btn">explore</button>
+                        </div>
+                        <div class="slide_image map"></div>
+                    </div>
+                    <div class="cover_content_slide" id="slide2">
+                        <div class="slide_text">
+                            <h1>1450+ MOVIES</h1>
+                            <button class="exp_btn">explore</button>
+                        </div>
+                        <div class="slide_image pin"></div>
+                    </div>
+                    <div class="cover_content_slide" id="slide3">
+                        <div class="slide_text">
+                            <h1>IN 40+ COUNTRIES</h1>
+                            <button class="exp_btn">explore</button>
+                        </div>
+                        <div class="slide_image flag"></div>
+                    </div>
+                    <div class="cover_content_slide" id="slide4">
+                        <div class="slide_text">
+                            <h1>FROM 8 OFFICES</h1>
+                            <button class="exp_btn">explore</button>
+                        </div>
+                        <div class="slide_image office"></div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="intro_content">
-            <img src="img/bg-video-copy.jpg" alt="">
+            <div class="main_screen"> <img src="img/bg-video-copy.jpg" alt="">
+                <button class="wach_mov"><span>Wach Movies</span> <i class="fas fa-angle-right"></i></button>
+            </div>
+            <div class="video_slider">
+                <div class="video_slider_container">
+                        <div class="video_slide active"><img src="img/Video_Bg1.jpg" alt=""></div>
+                        <div class="video_slide"><img src="img/Video_Bg2.jpg" alt=""></div>
+                        <div class="video_slide"><img src="img/Video_Bg3.jpg" alt=""></div>
+                        <div class="video_slide"><img src="img/Video_Bg4.jpg" alt=""></div>
+                     <div class="controls">
+                        <button class="prev"><i class="fas fa-angle-left"></i></button>
+                        <button class="next"><i class="fas fa-angle-right"></i></button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="about"></div>
     </section>
-
-    
     <script src="libs/jquery.min.js"></script>
     <script src="libs/materialize-src/js/bin/materialize.min.js"></script>
-<!--
+    <!--
 
     <script src="libs/janpaepke-ScrollMagic-ae215ee/scrollmagic/uncompressed/ScrollMagic.js"></script>
 
