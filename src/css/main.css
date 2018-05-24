@@ -2581,6 +2581,24 @@ body {
   z-index: 3;
   transform: translateX(100%);
   transition: 1s linear; }
+  .video_slider .controls button {
+    width: 40px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    outline: 0;
+    background: transparent; }
+    .video_slider .controls button i {
+      color: #fefefe;
+      font-size: 80px;
+      text-shadow: 2px 2px 3px #000;
+      transform: translateY(-20%); }
+    .video_slider .controls button.prev {
+      left: 62px; }
+    .video_slider .controls button.next {
+      right: 62px; }
 
 .move_left {
   transform: translateX(0%); }
@@ -2597,35 +2615,16 @@ body {
   transition-duration: 1s;
   background-visibility: hidden;
   transition-delay: .75s;
-  transform: translateZ(0);
-  display: flex;
-  flex-wrap: nowrap; }
+  transform: translateZ(0); }
   .video_slider_container .video_slide {
-    min-width: 100%;
+    width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     height: 100%;
     transition-timing-function: cubic-bezier(0.25, 0.5, 0.25, 1.25);
-    transform: translateZ(0) scale(0.8, 0.8);
+    transform: translateZ(0) scale(0.9, 0.9);
     transition-duration: .5s; }
     .video_slider_container .video_slide.active {
       transform: scale(1, 1);
       transition-delay: 2s; }
-  .video_slider_container .controls button {
-    width: 40px;
-    height: 50px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border: 0;
-    outline: 0;
-    background: transparent; }
-    .video_slider_container .controls button i {
-      color: #fefefe;
-      font-size: 80px;
-      transform: translateY(-20%); }
-    .video_slider_container .controls button.prev {
-      left: 62px; }
-    .video_slider_container .controls button.next {
-      right: 62px; }
