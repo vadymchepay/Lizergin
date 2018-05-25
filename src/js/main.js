@@ -1,54 +1,81 @@
 $(document).ready(function () {
     $('.sidenav').sidenav();
+    $('.wach_mov').hide();
+
+
+
     //function for sections sliding while scroll
-     
-    var introHeight = $('.intro').innerHeight();
+
+    var introHeight = $('.intro_content').innerHeight();
     var aboutHeight = $('.about').innerHeight();
     var trigger_1 = false;
     var coverBottom;
     var aboutBottom;
     var sPos = 0;
-    var nTop;
- 
-  
-    $('.wach_mov').hide();
+    var nsPos;
+    var aboutPosY = $('.about').offset().top;
+    var aboutPosX = $('.about').offset().left;
+    var aboutWidth = $('.about').width();
+    var introContentY = $('.intro_content').offset().top;
+    var introContentX = $('.intro_content').offset().left;
+    var introContentWidth = $('.intro_content').width();
+
+    $('.about').css({
+        'position': 'fixed',
+        'top': aboutPosY,
+        'left': aboutPosX,
+        'width': aboutWidth
+    });
+    $('.intro_content').css({
+        'position': 'fixed',
+        'top': introContentY,
+        'left': introContentX,
+        'width': introContentWidth
+    });
+
+    $('.intro').append('<div class="shadow"></div>');
+    
 
     $(window).scroll(function () {
         sPos = $(this).scrollTop();
         $('.intro_cover').css({
             'top': -sPos + 'px'
         });
-         $('.about').css({ 'top': sPos  });
-             
-        coverBottom = $('.intro_cover').innerHeight() - sPos;
-      
-        console.log('cB = ' + coverBottom);    
-        console.log('sPos = ' + sPos);    
 
-        if (coverBottom >= -100 && coverBottom <= 0) {
-            nTop = $('.about').position().top - sPos;
-        };
-        console.log('nTop = ' + nTop); 
+        coverBottom = $('.intro_cover').innerHeight() - sPos * 1.98;
         
+        
+        //
+        if (coverBottom >= -30 && coverBottom <= 0) {
+            $('.about').css({
+                'position': 'absolute',
+                'top': introHeight + sPos
+            });
+        };
+
+
         if (coverBottom <= 0) {
             trigger_1 = true;
             $('.wach_mov').fadeIn();
-            $('.about').css({
-                'top': nTop + 'px'
-            });
-
-        } else {
+        }   else {
             trigger_1 = false;
             $('.wach_mov').fadeOut();
             $('.about').css({
-                'top': top + 'px'
+
+                'position': 'fixed',
+                'top': aboutPosY,
+                'left': aboutPosX,
+                'width': aboutWidth
             });
         };
+        
+        console.log('cB = ' + coverBottom);
+        console.log('sPos = ' + sPos);
 
     });
-    
-    
-    
+
+
+
     // Intro cover slider
     var sliderInt = 1;
     $(function () {
@@ -75,18 +102,18 @@ $(document).ready(function () {
     setInterval(function () {
         next();
     }, 5000);
-    
-    
+
+
     //Wach Movies function
-   
+
     $('.wach_mov').click(function () {
         $('.video_slider').addClass('move_left');
     });
-    
+
     $('.close_btn').click(function () {
         $('.video_slider').removeClass('move_left');
     });
-    
+
     //Video Slider
 
 
@@ -114,7 +141,7 @@ $(document).ready(function () {
         } else {
             $('.prev').fadeIn();
         };
-        if (activeIndex == childrenNo-1) {
+        if (activeIndex == childrenNo - 1) {
             $('.next').fadeOut();
         } else {
             $('.next').fadeIn();
