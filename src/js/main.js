@@ -10,37 +10,41 @@ $(document).ready(function () {
     var trigger_1 = false;
     var coverBottom;
     var aboutBottom;
+    var sPos = 0;
     var nTop;
+ 
+  
     $('.wach_mov').hide();
-    $('.about').css({
-        'top': introHeight + 'px'
-    });
-    $('.intro_content').css({
-        'top': 0
-    });
+
+//    $('.about').css({ 'top': introHeight
+//    });
     $(window).scroll(function () {
-        var sPos = $(this).scrollTop();
+        sPos = $(this).scrollTop();
         $('.intro_cover').css({
             'top': -sPos + 'px'
         });
-        coverBottom = $('.intro_cover').innerHeight() - sPos * 1.87;
-        $('.intro_content').css({
-            'top': sPos + 'px'
-        });
-        var top = introHeight + sPos;
-        $('.about').css({
-            'top': top + 'px'
-        });
-        if (coverBottom >= -200 && coverBottom <= 0) {
-            nTop = $('.about').position().top;
+         $('.about').css({ 'top': sPos  });
+             
+        coverBottom = $('.intro_cover').innerHeight() - sPos;
+//        
+        console.log('cB = ' + coverBottom);    
+        console.log('sPos = ' + sPos);    
+//        var top = introHeight + sPos;
+//        $('.about').css({
+//            'top': top + 'px'
+//        });
+        if (coverBottom >= -100 && coverBottom <= 0) {
+            nTop = $('.about').position().top - sPos;
         };
+        console.log('nTop = ' + nTop); 
+        
         if (coverBottom <= 0) {
             trigger_1 = true;
             $('.wach_mov').fadeIn();
             $('.about').css({
                 'top': nTop + 'px'
             });
-            aboutBottom = aboutHeight - sPos * 1.87 + nTop;
+//            aboutBottom = aboutHeight - sPos * 1.87 + nTop;
         } else {
             trigger_1 = false;
             $('.wach_mov').fadeOut();
@@ -48,14 +52,11 @@ $(document).ready(function () {
                 'top': top + 'px'
             });
         };
-        //        console.log('coverBottom =' + coverBottom);
-        //        console.log('aboutHeight =' + aboutHeight);
-        //        console.log('aboutBottom =' + aboutBottom);
-        //        console.log('innerHeight =' + $('.intro_cover').innerHeight());
-        //        
-        //        console.log('sPos =' + sPos);
-        //        console.log('nTop =' + nTop);
+
     });
+    
+    
+    
     // Intro cover slider
     var sliderInt = 1;
     $(function () {
