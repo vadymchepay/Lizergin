@@ -1,10 +1,7 @@
 $(document).ready(function () {
     $('.sidenav').sidenav();
     //function for sections sliding while scroll
-    
-   
-
-
+     
     var introHeight = $('.intro').innerHeight();
     var aboutHeight = $('.about').innerHeight();
     var trigger_1 = false;
@@ -16,8 +13,6 @@ $(document).ready(function () {
   
     $('.wach_mov').hide();
 
-//    $('.about').css({ 'top': introHeight
-//    });
     $(window).scroll(function () {
         sPos = $(this).scrollTop();
         $('.intro_cover').css({
@@ -26,13 +21,10 @@ $(document).ready(function () {
          $('.about').css({ 'top': sPos  });
              
         coverBottom = $('.intro_cover').innerHeight() - sPos;
-//        
+      
         console.log('cB = ' + coverBottom);    
         console.log('sPos = ' + sPos);    
-//        var top = introHeight + sPos;
-//        $('.about').css({
-//            'top': top + 'px'
-//        });
+
         if (coverBottom >= -100 && coverBottom <= 0) {
             nTop = $('.about').position().top - sPos;
         };
@@ -44,7 +36,7 @@ $(document).ready(function () {
             $('.about').css({
                 'top': nTop + 'px'
             });
-//            aboutBottom = aboutHeight - sPos * 1.87 + nTop;
+
         } else {
             trigger_1 = false;
             $('.wach_mov').fadeOut();
@@ -83,10 +75,16 @@ $(document).ready(function () {
     setInterval(function () {
         next();
     }, 5000);
+    
+    
     //Wach Movies function
    
     $('.wach_mov').click(function () {
         $('.video_slider').addClass('move_left');
+    });
+    
+    $('.close_btn').click(function () {
+        $('.video_slider').removeClass('move_left');
     });
     
     //Video Slider
@@ -98,7 +96,7 @@ $(document).ready(function () {
     var childrenNo = sliderInner.children().length;
 
     sliderInner.width(viewWidth * childrenNo);
-
+    $('.prev').hide();
 
 
     function setWidth() {
