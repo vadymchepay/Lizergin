@@ -13,12 +13,14 @@ $(document).ready(function () {
     var aboutBottom;
     var sPos = 0;
     var nsPos;
-    var aboutPosY = $('.about').offset().top;
-    var aboutPosX = $('.about').offset().left;
-    var aboutWidth = $('.about').width();
     var introContentY = $('.intro_content').offset().top;
     var introContentX = $('.intro_content').offset().left;
     var introContentWidth = $('.intro_content').width();
+
+    var aboutPosY = $('.about').offset().top;
+    var aboutPosX = $('.about').offset().left;
+    var aboutWidth = introContentWidth;
+    var aboutBottom;
 
     $('.about').css({
         'position': 'fixed',
@@ -34,43 +36,53 @@ $(document).ready(function () {
     });
 
     $('.intro').append('<div class="shadow"></div>');
-    
+    $('.shadow').css({
+        'height': $('.intro_content').innerHeight() + $('.about').innerHeight()
+    });
+
+
 
     $(window).scroll(function () {
         sPos = $(this).scrollTop();
+        aboutBottom = $('.intro_content').offset().top + introHeight + $('.about').innerHeight();
+        $('.intro').css({
+            'top': sPos + 'px'
+        });
+
         $('.intro_cover').css({
             'top': -sPos + 'px'
         });
 
-        coverBottom = $('.intro_cover').innerHeight() - sPos * 1.98;
-        
-        
-        //
-        if (coverBottom >= -30 && coverBottom <= 0) {
+        coverBottom = $('.intro_cover').innerHeight() - sPos;
+
+
+        if (coverBottom >= -50 && coverBottom <= 0) {
+            coverBottom = 0;
+        };
+        if (coverBottom == 0) {
             $('.about').css({
                 'position': 'absolute',
-                'top': introHeight + sPos
+                'top': aboutPosY + sPos 
             });
         };
-
-
         if (coverBottom <= 0) {
             trigger_1 = true;
             $('.wach_mov').fadeIn();
-        }   else {
+            aboutBottom = aboutBottom - sPos;
+        } else {
             trigger_1 = false;
             $('.wach_mov').fadeOut();
             $('.about').css({
-
                 'position': 'fixed',
                 'top': aboutPosY,
                 'left': aboutPosX,
                 'width': aboutWidth
             });
         };
-        
+
         console.log('cB = ' + coverBottom);
         console.log('sPos = ' + sPos);
+        console.log('abBot = ' + aboutBottom);
 
     });
 
@@ -166,3 +178,104 @@ $(document).ready(function () {
 
     setWidth();
 });
+
+// Map API 
+
+function initMap() {
+    var element = document.getElementById('map');
+    var options = {
+        zoom: 2,
+        center: {
+            lat: 28.7328,
+            lng: 303.6587
+        },
+        styles: [
+            {
+                "elementType": "labels",
+                "stylers": [
+                    {
+                        "visibility": "off"
+      }
+    ]
+  },
+            {
+                "featureType": "administrative.land_parcel",
+                "stylers": [
+                    {
+                        "visibility": "off"
+      }
+    ]
+  },
+            {
+                "featureType": "administrative.neighborhood",
+                "stylers": [
+                    {
+                        "visibility": "off"
+      }
+    ]
+  },
+            {
+                "featureType": "landscape.natural",
+                "stylers": [
+                    {
+                        "visibility": "off"
+      }
+    ]
+  },
+            {
+                "featureType": "landscape.natural",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                    {
+                        "visibility": "simplified"
+      }
+    ]
+  },
+            {
+                "featureType": "poi",
+                "elementType": "labels.text",
+                "stylers": [
+                    {
+                        "visibility": "off"
+      }
+    ]
+  },
+            {
+                "featureType": "poi.business",
+                "stylers": [
+                    {
+                        "visibility": "off"
+      }
+    ]
+  },
+            {
+                "featureType": "road",
+                "stylers": [
+                    {
+                        "visibility": "off"
+      }
+    ]
+  },
+            {
+                "featureType": "road",
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "visibility": "off"
+      }
+    ]
+  },
+            {
+                "featureType": "transit",
+                "stylers": [
+                    {
+                        "visibility": "off"
+      }
+    ]
+  }
+]
+    };
+    var myMap = new google.maps.Map(element, options);
+
+
+}

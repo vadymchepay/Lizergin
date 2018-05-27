@@ -31,15 +31,26 @@
     </header>
     <section class="intro">
         <div class="intro_content">
-            <div class="main_screen"> <img src="img/bg-video-copy.jpg" alt="">
+            <div class="main_screen">
+                <video src="video/DroneFlyingOverForest.mp4" type="video/mp4" preload="auto" autoplay loop>
+                      
+                </video>
                 <button class="wach_mov"><span>Wach Movies</span> <i class="fas fa-angle-right"></i></button>
             </div>
             <div class="video_slider">
                 <div class="video_slider_container">
-                    <div class="video_slide active"><img src="img/Video_Bg1.jpg" alt=""></div>
-                    <div class="video_slide"><img src="img/Video_Bg2.jpg" alt=""></div>
-                    <div class="video_slide"><img src="img/Video_Bg3.jpg" alt=""></div>
-                    <div class="video_slide"><img src="img/Video_Bg4.jpg" alt=""></div>
+                    <div class="video_slide active"> <video src="video/FlyingdroneinDublinCity.mp4" type="video/mp4" controls>
+                       controls
+                </video></div>
+                    <div class="video_slide"><video src="video/LondonAdroneseyeviewofamazingLondonCity.mp4" type="video/mp4" controls>
+                       
+                </video></div>
+                    <div class="video_slide"><video src="video/LVIVDrone%20footage.mp4" type="video/mp4" controls>
+                       
+                </video></div>
+                    <div class="video_slide"><video src="video/NYCNight4kDrone.mp4" controls>
+                       
+                </video></div>
                 </div>
                 <div class="controls">
                     <button class="prev"><i class="fas fa-angle-left"></i></button>
@@ -83,13 +94,31 @@
             </div>
         </div>
     </section>
-    <section class="about"></section>
-    
+    <section class="about">
+        <div class="about_text">
+            <h1>we document the world</h1>
+            <p>We are an international movie production studio with locations around the globe. Our team of creative writers, daredevil VJs and charismatic hosts strives to capture the most breathtaking and yet undiscovered stories. We focus on factual content production for TV and web. Our documentaries, feature reports and investigative stories target a young and curious audience to which we provide a glimpse into some of the most interesting things our world and its people have to offer.
+            </p>
+        </div>
+        <div class="contacts">
+            <h1>contacts</h1>
+            <div class="map" id="map">
+                
+            </div>
+            <div class="contacts_carousel"></div>
+            <div class="footer"></div>
+        </div>
+
+    </section>
+
     
     <script src="libs/jquery.min.js"></script>
     <script src="libs/materialize-src/js/bin/materialize.min.js"></script>
-    <script src="libs/jquery.fullpage.min.js"></script>
+    <script src="libs/video-js-7.0.2/video.min.js"></script>
     <script src="js/main.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqtUUoUFFIIB8Ial6Is6aD-f3tvPL-y6U&callback=initMap">
+    </script>
+
 </body>
 
 </html>
