@@ -2443,7 +2443,6 @@ body {
 
 .about {
   width: 100%;
-  height: 1712px;
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
@@ -2680,3 +2679,62 @@ video {
   .about .contacts .map {
     width: 100%;
     height: 611px; }
+
+.contacts_carousel {
+  width: 100%; }
+  .contacts_carousel .slider {
+    background-color: white;
+    position: relative;
+    max-width: 90%;
+    height: 535px;
+    margin: 0 auto;
+    overflow: hidden; }
+    .contacts_carousel .slider .slider-inner {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      transition-duration: 1s;
+      background-color: #d4164e;
+      transform: translateZ(0); }
+    .contacts_carousel .slider .slide {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      background-color: #d4164e;
+      background-visibility: hidden;
+      transform: translateZ(0);
+      transition-duration: .5s;
+      text-align: center;
+      line-height: 600px;
+      font-size: 5rem;
+      color: white; }
+      .contacts_carousel .slider .slide.active {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+        transition-delay: 2s; }
+    .contacts_carousel .slider .slider-nav {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 20px;
+      text-align: center; }
+      .contacts_carousel .slider .slider-nav > div {
+        float: left;
+        width: 10px;
+        height: 10px;
+        border: 1px solid white;
+        z-index: 2;
+        display: inline-block;
+        margin: 0 10px;
+        cursor: pointer;
+        border-radius: 50%;
+        opacity: .5;
+        transition-duration: .25s;
+        background-color: transparent; }
+        .contacts_carousel .slider .slider-nav > div:hover {
+          opacity: 1; }
+        .contacts_carousel .slider .slider-nav > div.active {
+          background-color: white;
+          transform: scale(2);
+          opacity: 1; }
