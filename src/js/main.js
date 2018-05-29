@@ -26,6 +26,7 @@ $(document).ready(function () {
         , 'top': introContentY
         , 'left': introContentX
         , 'width': introContentWidth
+        , 'height': $('.intro').innerHeight()
     });
     $('.intro').append('<div class="shadow"></div>');
     $('.shadow').css({
@@ -347,3 +348,6 @@ setContWidth();
 $(window).resize(function () {
     setContWidth();
 });
+
+//Video API
+

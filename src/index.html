@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lizergin</title>
     <link rel="stylesheet" href="fonts/FontAwesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="libs/video-js-7.0.2/video-js.min.css">
     <link rel="stylesheet" href="css/main.css"> </head>
 
 <body>
@@ -32,22 +33,27 @@
     <section class="intro">
         <div class="intro_content">
             <div class="main_screen">
-                <video src="video/DroneFlyingOverForest.mp4" type="video/mp4" preload="auto" autoplay loop> </video>
+                <video id="my-video" class="video-js"   preload="auto" autoplay loop data-setup="{}">
+                <source src="video/DroneFlyingOverForest.mp4" type="video/mp4"></video>
                 <button class="wach_mov"><span>Wach Movies</span> <i class="fas fa-angle-right"></i></button>
             </div>
             <div class="video_slider">
                 <div class="video_slider_container">
                     <div class="video_slide active">
-                        <video src="video/FlyingdroneinDublinCity.mp4" type="video/mp4" controls> controls </video>
+                        <video controls>
+                        <source src="video/FlyingdroneinDublinCity.mp4" type="video/mp4"> </video>
                     </div>
                     <div class="video_slide">
-                        <video src="video/LondonAdroneseyeviewofamazingLondonCity.mp4" type="video/mp4" controls> </video>
+                        <video controls>
+                        <source src="video/LondonAdroneseyeviewofamazingLondonCity.mp4" type="video/mp4"> </video>
                     </div>
                     <div class="video_slide">
-                        <video src="video/LVIVDrone%20footage.mp4" type="video/mp4" controls> </video>
+                        <video controls>
+                        <source src="video/LVIVDrone%20footage.mp4" type="video/mp4"> </video>
                     </div>
                     <div class="video_slide">
-                        <video src="video/NYCNight4kDrone.mp4" controls> </video>
+                        <video controls>
+                        <source src="video/NYCNight4kDrone.mp4" type="video/mp4"> </video>
                     </div>
                 </div>
                 <div class="controls">
