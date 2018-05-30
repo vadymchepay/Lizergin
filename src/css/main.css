@@ -2399,8 +2399,7 @@ nav {
   src: url("../fonts/Source_Sans_Pro/SourceSansPro-LightItalic.ttf") format("truetype"); }
 
 body {
-  max-width: 1366px;
-  margin: 0 auto;
+  max-width: 100vw;
   background-color: #262626;
   font-family: 'Source Sans Pro'; }
 
@@ -2494,6 +2493,21 @@ body {
   margin-left: -1.25em;
   margin-top: -1.25em; }
 
+.big-play-button {
+  position: absolute;
+  font-size: 3em;
+  line-height: 2.5em;
+  height: 2.5em;
+  width: 2.5em;
+  background: transparent;
+  border: 0.06666em solid #fff;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  margin-left: -1.25em;
+  margin-top: -1.25em;
+  display: none; }
+
 .video-js .vjs-control-bar,
 .video-js .vjs-menu-button .vjs-menu-content {
   background-color: #2B333F;
@@ -2554,8 +2568,6 @@ body {
 
 .header {
   width: 100%;
-  max-width: 1366px;
-  margin: 0 auto;
   padding: 0 35px;
   height: 72px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 100%);
