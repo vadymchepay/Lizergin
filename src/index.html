@@ -7,6 +7,7 @@
     <title>Lizergin</title>
     <link rel="stylesheet" href="fonts/FontAwesome/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="libs/video-js-7.0.2/video-js.min.css">
+    <script src="libs/video-js-7.0.2/video.min.js"></script>
     <link rel="stylesheet" href="css/main.css"> </head>
 
 <body>
@@ -33,26 +34,26 @@
     <section class="intro">
         <div class="intro_content">
             <div class="main_screen">
-                <video id="my-video" class="video-js"   preload="auto" autoplay loop data-setup="{}">
+                <video id="bg-video" class="video-js vjs-default-skin" autoplay  preload="auto"  loop data-setup='{"preload": "true", "autoplay": "true", "loop": "true", "controls": "true"}'>
                 <source src="video/DroneFlyingOverForest.mp4" type="video/mp4"></video>
                 <button class="wach_mov"><span>Wach Movies</span> <i class="fas fa-angle-right"></i></button>
             </div>
             <div class="video_slider">
                 <div class="video_slider_container">
                     <div class="video_slide active">
-                        <video controls>
+                        <video id="video-1" class="video-js vjs-default-skin"  data-setup='{"controls": "true"}'>
                         <source src="video/FlyingdroneinDublinCity.mp4" type="video/mp4"> </video>
                     </div>
                     <div class="video_slide">
-                        <video controls>
+                        <video id="video-2" class="video-js vjs-default-skin"  data-setup='{"controls": "true"}'>
                         <source src="video/LondonAdroneseyeviewofamazingLondonCity.mp4" type="video/mp4"> </video>
                     </div>
                     <div class="video_slide">
-                        <video controls>
+                        <video id="video-3" class="video-js vjs-default-skin"  data-setup='{"controls": "true"}'>
                         <source src="video/LVIVDrone%20footage.mp4" type="video/mp4"> </video>
                     </div>
                     <div class="video_slide">
-                        <video controls>
+                        <video id="video-4" class="video-js vjs-default-skin"  data-setup='{"controls": "true"}'>
                         <source src="video/NYCNight4kDrone.mp4" type="video/mp4"> </video>
                     </div>
                 </div>
@@ -219,7 +220,7 @@ Japan</h3>
     </section>
     <script src="libs/jquery.min.js"></script>
     <script src="libs/materialize-src/js/bin/materialize.min.js"></script>
-    <script src="libs/video-js-7.0.2/video.min.js"></script>
+    
     <script src="js/main.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqtUUoUFFIIB8Ial6Is6aD-f3tvPL-y6U&callback=initMap">
     </script>

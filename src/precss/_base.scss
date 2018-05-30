@@ -11,7 +11,6 @@ body {
     padding-bottom: 56%;
     box-sizing: border-box;
     position: relative;
-
     .intro_cover {
         width: 100%;
         max-height: 100%;
@@ -65,7 +64,115 @@ body {
     background: transparent;
 }
 
-.my-video-dimensions {
+.bg-video-dimensions {
     width: 100%;
     height: 100%;
+}
+.video-1-dimensions {
+    width: 100%;
+    height: 100%;
+}
+.video-2-dimensions {
+    width: 100%;
+    height: 100%;
+}
+.video-3-dimensions {
+    width: 100%;
+    height: 100%;
+}
+.video-4-dimensions {
+    width: 100%;
+    height: 100%;
+}
+
+.video-js {
+    font-size: 10px;
+    color: #fff;
+}
+
+.vjs-default-skin .vjs-big-play-button {
+    font-size: 3em;
+    line-height: 2.5em;
+    height: 2.5em;
+    width: 2.5em;
+    background: transparent;
+    border: 0.06666em solid #fff;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    margin-left: -1.25em;
+    margin-top: -1.25em;
+}
+
+.video-js .vjs-control-bar,
+.video-js .vjs-menu-button .vjs-menu-content {
+    background-color: #2B333F;
+    background-color: rgba(43, 51, 63, 0.7);
+}
+
+.video-js .vjs-slider {
+    background: #d7d7d7;
+}
+
+.video-js .vjs-volume-level,
+.video-js .vjs-play-progress,
+.video-js .vjs-slider-bar {
+    background: #d3164e;
+}
+
+.video-js .vjs-load-progress {
+    background: #b99dba;
+}
+
+.video-js .vjs-load-progress div {
+    background: #b99dba;
+}
+
+.video-js .vjs-control-bar {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 15px;
+}
+
+.vjs-play-control.vjs-control.vjs-button {
+    display: none;
+}
+
+.vjs-remaining-time.vjs-time-control.vjs-control {
+    display: none;
+}
+
+.vjs-fullscreen-control.vjs-control.vjs-button {
+    display: none;
+}
+
+.vjs-playback-rate.vjs-menu-button.vjs-menu-button-popup.vjs-control.vjs-button {
+    display: none;
+}
+
+.vjs-volume-menu-button.vjs-menu-button.vjs-menu-button-inline.vjs-control.vjs-button.vjs-volume-menu-button-horizontal {
+    position: absolute;
+    top: -35px;
+    height: 30px;
+}
+
+.vjs-progress-control.vjs-control {
+    align-items: flex-start;
+}
+
+.vjs-progress-holder.vjs-slider.vjs-slider-horizontal {
+    height: 100%;
+    margin: 0;
+}
+
+.vjs-play-progress.vjs-slider-bar::before {
+    display: none;
+}
+
+.vjs-volume-panel.vjs-volume-panel-horizontal {
+    position: absolute;
+    top: -30px;
 }

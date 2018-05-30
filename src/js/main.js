@@ -14,6 +14,7 @@ $(document).ready(function () {
     var aboutPosY = $('.about').offset().top;
     var aboutPosX = $('.about').offset().left;
     var aboutWidth = introContentWidth;
+    var volChange;
     
     $('.about').css({
         'position': 'fixed'
@@ -56,12 +57,17 @@ $(document).ready(function () {
                 , 'left': 0
             });
         };
+        console.log('aboutTop = ' + $('.about').offset().top);
+        console.log('sPos = ' + sPos);
         if (coverBottom <= 0) {
             trigger_1 = true;
             $('.wach_mov').fadeIn();
             var contactsTop = $('.contacts').offset().top;
-            console.log('contactsTop = ' + contactsTop);
-            console.log('sPos = ' + sPos);
+//            console.log('contactsTop = ' + contactsTop);
+//            console.log('sPos = ' + sPos);
+            volChange = ($('.about').offset().top - sPos)/1000;
+            $('#video-1').volume = volChange;
+            console.log('volChange = ' + volChange);
         }
         else {
             trigger_1 = false;
