@@ -2491,12 +2491,13 @@ body {
   left: 50%;
   top: 50%;
   margin-left: -1.25em;
-  margin-top: -1.25em; }
+  margin-top: -1.25em;
+  display: none !important; }
 
 .big-play-button {
   position: absolute;
-  font-size: 3em;
-  line-height: 2.5em;
+  font-size: 2em;
+  line-height: 2.4em;
   height: 2.5em;
   width: 2.5em;
   background: transparent;
@@ -2507,6 +2508,16 @@ body {
   margin-left: -1.25em;
   margin-top: -1.25em;
   display: none; }
+  .big-play-button span {
+    font-size: 0.9em;
+    display: block;
+    color: #fff;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center; }
+
+.play-button-show {
+  display: block; }
 
 .video-js .vjs-control-bar,
 .video-js .vjs-menu-button .vjs-menu-content {

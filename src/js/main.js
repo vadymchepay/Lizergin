@@ -15,19 +15,18 @@ $(document).ready(function () {
     var aboutPosX = $('.about').offset().left;
     var aboutWidth = introContentWidth;
     var volChange;
-
     $('.about').css({
-        'position': 'fixed',
-        'top': aboutPosY,
-        'left': aboutPosX,
-        'width': aboutWidth
+        'position': 'fixed'
+        , 'top': aboutPosY
+        , 'left': aboutPosX
+        , 'width': aboutWidth
     });
     $('.intro_content').css({
-        'position': 'fixed',
-        'top': introContentY,
-        'left': introContentX,
-        'width': introContentWidth,
-        'height': $('.intro').innerHeight()
+        'position': 'fixed'
+        , 'top': introContentY
+        , 'left': introContentX
+        , 'width': introContentWidth
+        , 'height': $('.intro').innerHeight()
     });
     $('.intro').append('<div class="shadow"></div>');
     $('.shadow').css({
@@ -52,9 +51,9 @@ $(document).ready(function () {
                 'position': 'relative'
             });
             $('.about').css({
-                'position': 'relative',
-                'top': sPos,
-                'left': 0
+                'position': 'relative'
+                , 'top': sPos
+                , 'left': 0
             });
         };
         console.log('aboutTop = ' + $('.about').offset().top);
@@ -66,16 +65,24 @@ $(document).ready(function () {
             //            console.log('contactsTop = ' + contactsTop);
             //            console.log('sPos = ' + sPos);
             volChange = ($('.about').offset().top - sPos) / 1000;
-            $('#video-1').volume = volChange;
             console.log('volChange = ' + volChange);
-        } else {
+            bgPlayer.volume(volChange);
+            if (volChange <= 0) {
+                bgPlayer.pause();
+                volChange = 0;
+            }
+            else if (volChange >= 0) {
+                bgPlayer.play();
+            }
+        }
+        else {
             trigger_1 = false;
             $('.wach_mov').fadeOut();
             $('.about').css({
-                'position': 'fixed',
-                'top': aboutPosY,
-                'left': aboutPosX,
-                'width': aboutWidth
+                'position': 'fixed'
+                , 'top': aboutPosY
+                , 'left': aboutPosX
+                , 'width': aboutWidth
             });
         };
     });
@@ -95,7 +102,8 @@ $(document).ready(function () {
     function showSlide(id) {
         if (id > count) {
             id = 1;
-        } else if (id < 1) {
+        }
+        else if (id < 1) {
             id = count;
         }
         $('.cover_content_slider_container .cover_content_slide').hide();
@@ -132,12 +140,14 @@ $(document).ready(function () {
     function buttonFade() {
         if (activeIndex == 0) {
             $('.prev').fadeOut();
-        } else {
+        }
+        else {
             $('.prev').fadeIn();
         };
         if (activeIndex == childrenNo - 1) {
             $('.next').fadeOut();
-        } else {
+        }
+        else {
             $('.next').fadeIn();
         };
     };
@@ -162,34 +172,34 @@ $(document).ready(function () {
 // Map API 
 var locations = [{
         coordinates: {
-            lat: 40.6971494,
-            lng: -74.2598643
+            lat: 40.6971494
+            , lng: -74.2598643
         }
     }, {
         coordinates: {
-            lat: 51.461989,
-            lng: -0.6104095
+            lat: 51.461989
+            , lng: -0.6104095
         }
     }
     , {
         coordinates: {
-            lat: 52.5065133,
-            lng: 13.1445555
+            lat: 52.5065133
+            , lng: 13.1445555
         }
     }, {
         coordinates: {
-            lat: 29.6688758,
-            lng: 29.4339315
+            lat: 29.6688758
+            , lng: 29.4339315
         }
     }, {
         coordinates: {
-            lat: 3.1385036,
-            lng: 101.616949
+            lat: 3.1385036
+            , lng: 101.616949
         }
     }, {
         coordinates: {
-            lat: 35.6732619,
-            lng: 139.5703037
+            lat: 35.6732619
+            , lng: 139.5703037
         }
     }];
 var markers = [];
@@ -198,90 +208,90 @@ var icons = [];
 function initMap() {
     var element = document.getElementById('map');
     var options = {
-        zoom: 2,
-        center: {
-            lat: 28.7328,
-            lng: 303.6587
-        },
-        styles: [
+        zoom: 2
+        , center: {
+            lat: 28.7328
+            , lng: 303.6587
+        }
+        , styles: [
             {
-                "elementType": "labels",
-                "stylers": [
+                "elementType": "labels"
+                , "stylers": [
                     {
                         "visibility": "off"
       }
     ]
   }
             , {
-                "featureType": "administrative.land_parcel",
-                "stylers": [
+                "featureType": "administrative.land_parcel"
+                , "stylers": [
                     {
                         "visibility": "off"
       }
     ]
   }
             , {
-                "featureType": "administrative.neighborhood",
-                "stylers": [
+                "featureType": "administrative.neighborhood"
+                , "stylers": [
                     {
                         "visibility": "off"
       }
     ]
   }
             , {
-                "featureType": "landscape.natural",
-                "stylers": [
+                "featureType": "landscape.natural"
+                , "stylers": [
                     {
                         "visibility": "off"
       }
     ]
   }
             , {
-                "featureType": "landscape.natural",
-                "elementType": "geometry.stroke",
-                "stylers": [
+                "featureType": "landscape.natural"
+                , "elementType": "geometry.stroke"
+                , "stylers": [
                     {
                         "visibility": "simplified"
       }
     ]
   }
             , {
-                "featureType": "poi",
-                "elementType": "labels.text",
-                "stylers": [
+                "featureType": "poi"
+                , "elementType": "labels.text"
+                , "stylers": [
                     {
                         "visibility": "off"
       }
     ]
   }
             , {
-                "featureType": "poi.business",
-                "stylers": [
+                "featureType": "poi.business"
+                , "stylers": [
                     {
                         "visibility": "off"
       }
     ]
   }
             , {
-                "featureType": "road",
-                "stylers": [
+                "featureType": "road"
+                , "stylers": [
                     {
                         "visibility": "off"
       }
     ]
   }
             , {
-                "featureType": "road",
-                "elementType": "labels.icon",
-                "stylers": [
+                "featureType": "road"
+                , "elementType": "labels.icon"
+                , "stylers": [
                     {
                         "visibility": "off"
       }
     ]
   }
             , {
-                "featureType": "transit",
-                "stylers": [
+                "featureType": "transit"
+                , "stylers": [
                     {
                         "visibility": "off"
       }
@@ -293,9 +303,9 @@ function initMap() {
     var marker, i;
     for (i = 0; i < locations.length; i++) {
         marker = new google.maps.Marker({
-            position: locations[i].coordinates,
-            map: myMap,
-            icon: '../img/map_pointer_small.png'
+            position: locations[i].coordinates
+            , map: myMap
+            , icon: '../img/map_pointer_small.png'
         });
         google.maps.event.addListener(marker, 'click', (function (marker, i) {
             return function () {
@@ -350,40 +360,35 @@ setContWidth();
 $(window).resize(function () {
     setContWidth();
 });
-
 //Video API
 var trigger_2 = false;
 var trigger_3 = false;
 var playedTrig = false
-
 $(".video-js").each(function (i, el) {
     $(el).mousemove(function () {
         trigger_2 = true;
-        console.log(trigger_2);
-        $('.big-play-button').css('display', 'block');
         trigger_3 = true;
+        playButton(i);
     });
 });
 
-
-setInterval(function () {
-    $('.big-play-button').css('display', 'none');
-}, 1000);
-
-
-//if (trigger_2) {
-//    setTimeout(function () {
-//        $('.big-play-button').css('display', 'none');
-//    }, 1000);
-//}
-
-
-
-
+function playButton(p) {
+    if (trigger_3) {
+        $('.big-play-button').eq(p).addClass('play-button-show');
+        var hb = setTimeout(function () {
+            $('.big-play-button').eq(p).removeClass('play-button-show');
+        }, 1500);
+        $('.big-play-button').eq(p).mouseover(function () {
+            $('.big-play-button').eq(p).addClass('play-button-show');
+            clearTimeout(hb);
+        });
+    };
+};
+var bgPlayer;
 videojs("#bg-video").ready(function () {
-    var bgPlayer = this;
+    bgPlayer = this;
     bgPlayer.play();
-
+    bgPlayer.volume(0);
     $('.wach_mov').click(function () {
         bgPlayer.pause();
     });
@@ -393,7 +398,47 @@ videojs("#bg-video").ready(function () {
     if (trigger_2) {
         bgPlayer.removeClass('vjs-user-inactive');
         bgPlayer.addClass('vjs-user-active');
-
     };
-
+    $('.big-play-button').eq(0).click(function () {
+        if (bgPlayer.paused()) {
+            bgPlayer.play();
+        }
+        else {
+            bgPlayer.pause();
+        };
+    });
 });
+
+console.log(bgPlayer);
+
+var playerId = [];
+var slidePlayer = [];
+for (var x = 0; x < $('.video_slide .video-js').length; x++) {
+    playerId[x] = $('.video_slide .video-js').eq(x).attr('id');
+    slidePlayer[x] = 'slidePlayer_' + x;
+};
+for (var y = 0; y < playerId.length; y++) {
+    videojs(playerId[y]).ready(function () {
+        var slidePlayer[y] = this;
+        slidePlayer[y].volume(0);
+        $('.wach_mov').click(function () {
+            slidePlayer[y].pause();
+        });
+        $('.close_btn').click(function () {
+            slidePlayer[y].play();
+        });
+        if (trigger_2) {
+            slidePlayer[y].removeClass('vjs-user-inactive');
+            slidePlayer[y].addClass('vjs-user-active');
+        };
+        $('.big-play-button').eq(y + 1).click(function () {
+            if (slidePlayer[y].paused()) {
+                slidePlayer[y].play();
+            }
+            else {
+                slidePlayer[y].pause();
+            };
+        });
+    });
+}
+console.log(slidePlayer[0]);
