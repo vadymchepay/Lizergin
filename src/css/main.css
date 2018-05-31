@@ -2771,7 +2771,9 @@ video {
 .about .about_text {
   padding-top: 131px;
   padding-left: 108px;
-  padding-bottom: 46px; }
+  padding-bottom: 46px;
+  position: relative;
+  z-index: 5; }
   .about .about_text h1 {
     max-width: 325px;
     color: #fefefe;
