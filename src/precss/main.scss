@@ -7,8 +7,10 @@
 @import 'elements/color-classes';
 @import 'elements/variables';
 @import 'elements/global';
+@import 'elements/preloader';
 @import 'elements/navbar';
 @import 'elements/sidenav';
+
 
 
 //Base styles
@@ -24,4 +26,5 @@
 @import 'sections/intro_content';
 @import 'sections/about';
 
-
+//media
+@import 'media';

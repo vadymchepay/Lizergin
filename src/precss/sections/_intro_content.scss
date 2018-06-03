@@ -49,6 +49,13 @@
     z-index: 3;
     transform: translateX(100%);
     transition: 1s linear;
+    &.desktop{
+        display: block;
+    }   
+    &.mobile{
+        display: none;
+    }
+    
     .controls {
         button {
             width: 40px;

@@ -118,6 +118,7 @@ gulp.task('buildHtml', function () {
 
 
 
+
 gulp.task('build', ['clean', 'buildHtml', 'buildCss', 'img', 'buildJs', 'buildFonts', 'libs']);
 
 gulp.task('default', ['watch']);

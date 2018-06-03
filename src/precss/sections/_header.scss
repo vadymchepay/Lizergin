@@ -12,10 +12,16 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        .sidenav-trigger{
+            i {
+                color: #fefefe;
+                font-size: 24px;
+                text-shadow: 2px 2px 3px #010101;
+            }
+        }
         .brand-logo {
             font-size: 50px;
             font-weight: 900;
-//            font-style: italic;
             text-shadow: 2px 2px 3px #010101;
             color: #b41342;
             text-transform: uppercase;
@@ -30,6 +36,18 @@
                     font-size: 20px;
                     font-weight: 600;
                 }
+            }
+        }
+    }
+
+    .sidenav {
+        background-color: #d4164e;
+        li {
+            a {
+                color: #fefefe;
+                font-family: "Source Sans Pro";
+                font-size: 20px;
+                font-weight: 600;
             }
         }
     }

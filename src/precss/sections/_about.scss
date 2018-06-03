@@ -100,36 +100,31 @@
                 transition-delay: 2s;
             }
         }
-        //        .slider-nav {
-        //            position: absolute;
-        //            bottom: 0;
-        //            left: 50%;
-        //            transform: translateX(-50%);
-        //            padding: 20px;
-        //            text-align: center;
-        //            > div {
-        //                float: left;
-        //                width: 10px;
-        //                height: 10px;
-        //                border: 1px solid white;
-        //                z-index: 2;
-        //                display: inline-block;
-        //                margin: 0 10px;
-        //                cursor: pointer;
-        //                border-radius: 50%;
-        //                opacity: .5;
-        //                transition-duration: .25s;
-        //                background-color: transparent;
-        //                &:hover {
-        //                    opacity: 1;
-        //                }
-        //                &.active {
-        //                    background-color: white;
-        //                    transform: scale(2);
-        //                    opacity: 1;
-        //                }
-        //            }
-        //        }
+
+    }
+    .contacts_controls {
+        button {
+            width: 40px;
+            height: 50px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 0;
+            outline: 0;
+            background: transparent;
+            i {
+                color: #fefefe;
+                font-size: 80px;
+                text-shadow: 2px 2px 3px #000;
+                transform: translateY(-20%);
+            }
+            &.prev {
+                left: 15px;
+            }
+            &.next {
+                right: 15px;
+            }
+        }
     }
 }
 
